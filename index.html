@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="description" content="Dashboard studio minimal per telefono" />
+    <title>Focus StandBy</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="dashboard" aria-label="Dashboard studio">
+      <section class="clock-card card" aria-label="Orologio">
+        <p class="eyebrow" id="date-label">—</p>
+        <time class="time" id="time" datetime="">--:--</time>
+        <p class="focus-note" id="focus-note">focus mode</p>
+      </section>
+
+      <section class="calendar-card card" aria-labelledby="calendar-title">
+        <div class="card-heading">
+          <h1 id="calendar-title">Calendario</h1>
+          <button class="icon-button" id="today-button" type="button">Oggi</button>
+        </div>
+        <div class="month-row">
+          <button class="arrow" id="previous-month" type="button" aria-label="Mese precedente">‹</button>
+          <p id="month-label">—</p>
+          <button class="arrow" id="next-month" type="button" aria-label="Mese successivo">›</button>
+        </div>
+        <div class="weekdays" aria-hidden="true"><span>L</span><span>M</span><span>M</span><span>G</span><span>V</span><span>S</span><span>D</span></div>
+        <div class="calendar-grid" id="calendar-grid" aria-label="Giorni del mese"></div>
+      </section>
+
+      <section class="spotify-card card" aria-labelledby="spotify-title">
+        <div class="card-heading">
+          <div><p class="service-tag spotify-dot">Spotify</p><h2 id="spotify-title">In riproduzione</h2></div>
+          <span class="status" id="spotify-status">non collegato</span>
+        </div>
+        <div class="media-content" id="spotify-content">
+          <div class="album-art" aria-hidden="true">♫</div>
+          <div class="media-copy"><p class="media-title">Collega Spotify</p><p class="media-subtitle">per vedere la traccia attuale</p></div>
+        </div>
+        <div class="card-actions">
+          <button class="text-button" id="spotify-connect" type="button">Collega</button>
+          <a class="text-button muted" href="https://open.spotify.com/" target="_blank" rel="noreferrer">Apri Spotify</a>
+        </div>
+      </section>
+
+      <section class="tasks-card card" aria-labelledby="tasks-title">
+        <div class="card-heading">
+          <div><p class="service-tag google-dot">Google Tasks</p><h2 id="tasks-title">Da fare</h2></div>
+          <span class="status" id="tasks-status">non collegato</span>
+        </div>
+        <ul class="task-list" id="task-list"><li class="empty-state">Collega Google Tasks per vedere le cose da fare.</li></ul>
+        <div class="card-actions"><button class="text-button" id="tasks-connect" type="button">Collega</button></div>
+      </section>
+    </main>
+    <dialog id="setup-dialog">
+      <div class="dialog-top"><h2 id="dialog-title">Collegamento</h2><button class="close" id="dialog-close" aria-label="Chiudi">×</button></div>
+      <p id="dialog-text"></p>
+      <a class="text-button" href="README.md" target="_blank">Apri istruzioni</a>
+    </dialog>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
